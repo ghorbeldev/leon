@@ -27,6 +27,7 @@ html {
   background: #e9e9e9;
   right: 20px;
   bottom: 20px;
+  z-index: 99999;
   cursor: pointer;
 }
 .scroll-to-top i {
@@ -144,12 +145,38 @@ html {
 .header ul li:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
+@media (min-width: 450px) {
+  .links i {
+    display: none;
+  }
+  .links ul {
+    position: initial;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .header ul li {
+    width: auto;
+    background: #fff;
+    padding: 10px;
+    border-bottom: none !important;
+  }
+  .header ul li:hover a {
+    /* transform: scale(1.3); */
+    color: turquoise;
+    padding-left: 0;
+  }
+  .header ul li a {
+    color: #000;
+  }
+  .links ul::after {
+    display: none;
+  }
+}
 .land {
-  background-image: url("../images/landing.jpg");
-  background-position: 0 0;
+  max-width: 100%;
+  background-image: url(../images/landing.jpg);
   background-size: cover;
   position: relative;
-  width: 100vw;
   height: calc(100vh - 94px);
 }
 .intro {
@@ -343,14 +370,13 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  margin-left: -50px;
+  margin: 20px 0 20px -30px;
   text-align: center;
 }
 .main-text {
   color: var(--scnd-clr);
   font-weight: 700;
-  font-size: 4.5vw;
+  font-size: 1.55em;
 }
 .email {
   background: #fff;
@@ -362,7 +388,7 @@ html {
 .email a {
   text-decoration: none;
   color: var(--main-clr);
-  font-size: 4.3vw;
+  font-size: 1.4em;
   font-weight: 700;
   transform: translate(0, -50%);
 }
@@ -372,7 +398,7 @@ html {
   align-items: center;
 }
 .social p {
-  font-size: 2.6vw;
+  font-size: 1.9em;
   color: #777;
 }
 .social i {
@@ -391,4 +417,11 @@ html {
 }
 .footer .container p span {
   color: var(--main-clr);
+}
+i {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+i:hover {
+  transform: translateY(-5px);
 }

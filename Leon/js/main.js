@@ -1,5 +1,6 @@
 const links = document.querySelector(".links");
 const scrollToTop = document.querySelector(".scroll-to-top");
+console.log(scrollToTop);
 links.addEventListener("click", () => {
   links.classList.toggle("active");
 });
