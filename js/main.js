@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     feature.dataset.aos = "fade-up";
     feature.dataset.aosDelay = 100 * indx;
   });
+  const services = document.querySelectorAll(".service");
+  services.forEach((service, indx) => {
+    service.dataset.aos = "fade-up";
+    service.dataset.aosDelay = 100 * indx;
+  });
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card, indx) => {
+    card.dataset.aos = "fade-up";
+    card.dataset.aosDelay = 100 * indx;
+  });
 
   links.addEventListener("click", () => {
     links.classList.toggle("active");
